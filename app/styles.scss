@@ -1,0 +1,198 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css);
+
+:root {
+  --darkBlack: #000;
+  --black: #666;
+  --white: #fff;
+}
+
+@mixin trbl-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin flex-center-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  font-size: 20px;
+  background-color: var(--white);
+  border-radius: 4px;
+  border: 1px solid var(--black);
+  padding: 8px 14px;
+  transition: all 0.3s linear;
+
+  &:hover {
+    background-color: var(--darkBlack);
+    color: var(--white);
+  }
+}
+
+.container {
+  max-width: 1350px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.login-page {
+  @include flex-center-all;
+  padding-top: 100px;
+}
+
+// Header
+.header {
+  padding: 20px 0;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+
+  &-box {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      color: var(--black);
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+// Main page
+.cl-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  .cl-col-4,  .cl-col-8{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .cl-col-4 {
+    width: 25%;
+  }
+
+  .cl-col-8 {
+    width: 75%;
+  }
+}
+
+
+.left-col,
+.right-col {
+  padding-top: 40px;
+}
+
+.left-col {
+  border-right: 1px solid rgba(32, 33, 36, 0.28);
+}
+
+.profile-bar {
+  text-align: center;
+
+  img {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .user-info {
+    margin-top: 5px;
+    color: var(--black);
+    line-height: 1.5;
+  }
+}
+
+.chart {
+  margin-bottom: 40px;
+}
+
+.tabs {
+  margin-bottom: 70px;
+}
+
+// Accordian
+.rc-accordion-toggle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #ebedf0;
+  transition: 0.3s;
+  padding: 10px;
+  cursor: pointer;
+
+  &.active {
+    .rc-accordion-icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.rc-accordion-card {
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.rc-accordion-title {
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  margin-bottom: 0;
+  color: #475f7b;
+  transition: 0.3s;
+}
+
+.rc-accordion-icon {
+  position: relative;
+  top: 2px;
+  color: #475f7b;
+  transition: 0.35s;
+  font-size: 12px;
+}
+
+.rc-accordion-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  line-height: 1.5;
+  padding: 15px;
+  margin-bottom: 10px;
+
+  .cart-button {
+    text-align: right;
+    margin-bottom: 5px;
+
+    button {
+      font-size: 14px;
+      padding: 4px 8px;
+    }
+  }
+}
+
+.rc-collapse {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+
+  &.show {
+    height: auto;
+  }
+}
+
+// Loading screen
+.loading-screen {
+  position: fixed;
+  @include trbl-0;
+  @include flex-center-all;
+
+  background: var(--white);
+  text-align: center;
+}
